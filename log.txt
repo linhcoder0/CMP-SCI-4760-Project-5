@@ -1,0 +1,2636 @@
+OSS: starting, PID:533001 PPID:5357
+OSS called with:
+-n 3
+-s 2
+-t 4.000
+-i 0.600
+-f log.txt
+OSS: Shared memory clock initialized.
+OSS: Clock is 0:0
+OSS: Logging to log.txt with max 10000 log write calls
+OSS: Resource descriptors initialized.
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   5   5   5   5   5   5   
+
+OSS: Message queue created with id 16
+OSS: Forked child P1 with PID 533002 in slot 0 at time 0:0
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:0
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:0
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   5   5   4   5   5   5   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:10000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:10000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   5   5   4   5   5   4   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:20000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:20000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   5   5   4   5   5   3   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:30000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:30000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   4   5   4   5   5   3   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:40000000
+OSS: Received message from child PID 533002 slot 0 with value -7
+OSS: Child PID 533002 slot 0 is releasing R6 at time 0:40000000
+OSS: Acknowledged release of R6 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   4   5   5   5   5   3   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:50000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:50000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   4   4   5   5   5   3   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:60000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:60000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   4   4   5   5   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:70000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:70000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   5   3   4   5   5   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:80000000
+OSS: Received message from child PID 533002 slot 0 with value 4
+OSS: Child PID 533002 slot 0 is requesting R3 at time 0:80000000
+OSS: Granting child PID 533002 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   4   3   4   5   5   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:90000000
+OSS: Received message from child PID 533002 slot 0 with value 8
+OSS: Child PID 533002 slot 0 is requesting R7 at time 0:90000000
+OSS: Granting child PID 533002 slot 0 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   4   3   4   5   4   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:100000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:100000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   4   3   3   5   4   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:110000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:110000000
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   4   3   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:120000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:120000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   5   4   2   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:130000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:130000000
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   5   5   4   2   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:140000000
+OSS: Received message from child PID 533002 slot 0 with value -5
+OSS: Child PID 533002 slot 0 is releasing R4 at time 0:140000000
+OSS: Acknowledged release of R4 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   5   5   4   3   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:150000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:150000000
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   5   5   4   3   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:160000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:160000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   5   5   4   2   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:170000000
+OSS: Received message from child PID 533002 slot 0 with value 2
+OSS: Child PID 533002 slot 0 is requesting R1 at time 0:170000000
+OSS: Granting child PID 533002 slot 0 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   4   5   4   2   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:180000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:180000000
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   5   4   2   3   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:190000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:190000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   5   4   2   2   5   4   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:200000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:200000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   5   4   2   2   5   4   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:210000000
+OSS: Received message from child PID 533002 slot 0 with value 2
+OSS: Child PID 533002 slot 0 is requesting R1 at time 0:210000000
+OSS: 20 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P1      3   2   0   1   3   3   0   1   1   4   
+
+OSS: Granting child PID 533002 slot 0 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   3   5   4   2   2   5   4   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:220000000
+OSS: Received message from child PID 533002 slot 0 with value 2
+OSS: Child PID 533002 slot 0 is requesting R1 at time 0:220000000
+OSS: Granting child PID 533002 slot 0 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   2   5   4   2   2   5   4   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:230000000
+OSS: Received message from child PID 533002 slot 0 with value -6
+OSS: Child PID 533002 slot 0 is releasing R5 at time 0:230000000
+OSS: Acknowledged release of R5 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   2   5   4   2   3   5   4   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:240000000
+OSS: Received message from child PID 533002 slot 0 with value 8
+OSS: Child PID 533002 slot 0 is requesting R7 at time 0:240000000
+OSS: Granting child PID 533002 slot 0 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   2   5   4   2   3   5   3   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:250000000
+OSS: Received message from child PID 533002 slot 0 with value -9
+OSS: Child PID 533002 slot 0 is releasing R8 at time 0:250000000
+OSS: Acknowledged release of R8 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   2   5   4   2   3   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:260000000
+OSS: Received message from child PID 533002 slot 0 with value 2
+OSS: Child PID 533002 slot 0 is requesting R1 at time 0:260000000
+OSS: Granting child PID 533002 slot 0 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   1   5   4   2   3   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:270000000
+OSS: Received message from child PID 533002 slot 0 with value 4
+OSS: Child PID 533002 slot 0 is requesting R3 at time 0:270000000
+OSS: Granting child PID 533002 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   1   5   3   2   3   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:280000000
+OSS: Received message from child PID 533002 slot 0 with value 3
+OSS: Child PID 533002 slot 0 is requesting R2 at time 0:280000000
+OSS: Granting child PID 533002 slot 0 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   1   4   3   2   3   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:290000000
+OSS: Received message from child PID 533002 slot 0 with value -6
+OSS: Child PID 533002 slot 0 is releasing R5 at time 0:290000000
+OSS: Acknowledged release of R5 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   1   4   3   2   4   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:300000000
+OSS: Received message from child PID 533002 slot 0 with value 2
+OSS: Child PID 533002 slot 0 is requesting R1 at time 0:300000000
+OSS: Granting child PID 533002 slot 0 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   2   4   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:310000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:310000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   4   5   3   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:320000000
+OSS: Received message from child PID 533002 slot 0 with value 8
+OSS: Child PID 533002 slot 0 is requesting R7 at time 0:320000000
+OSS: Granting child PID 533002 slot 0 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   4   5   2   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:330000000
+OSS: Received message from child PID 533002 slot 0 with value -1
+OSS: Child PID 533002 slot 0 is releasing R0 at time 0:330000000
+OSS: Acknowledged release of R0 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   4   3   1   4   5   2   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:340000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:340000000
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   4   5   2   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:350000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:350000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   3   5   2   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:360000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:360000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   2   5   2   5   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:370000000
+OSS: Received message from child PID 533002 slot 0 with value -10
+OSS: Child PID 533002 slot 0 is releasing R9 at time 0:370000000
+OSS: Acknowledged release of R9 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   1   2   5   2   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:380000000
+OSS: Received message from child PID 533002 slot 0 with value -4
+OSS: Child PID 533002 slot 0 is releasing R3 at time 0:380000000
+OSS: Acknowledged release of R3 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   4   1   2   5   2   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:390000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:390000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   4   0   2   5   2   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:400000000
+OSS: Received message from child PID 533002 slot 0 with value 4
+OSS: Child PID 533002 slot 0 is requesting R3 at time 0:400000000
+OSS: Granting child PID 533002 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   0   2   5   2   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:410000000
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:410000000
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   0   2   4   2   5   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:420000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:420000000
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   0   2   4   2   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:430000000
+OSS: Received message from child PID 533002 slot 0 with value 8
+OSS: Child PID 533002 slot 0 is requesting R7 at time 0:430000000
+OSS: Granting child PID 533002 slot 0 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   3   0   2   4   1   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:440000000
+OSS: Received message from child PID 533002 slot 0 with value 4
+OSS: Child PID 533002 slot 0 is requesting R3 at time 0:440000000
+OSS: Granting child PID 533002 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   2   0   2   4   1   4   2   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:450000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:450000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   2   0   2   4   1   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:460000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:460000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   4   2   0   1   4   1   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:470000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:470000000
+OSS: 40 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P1      4   5   1   3   5   4   1   4   1   4   
+
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   0   1   4   1   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:480000000
+OSS: Received message from child PID 533002 slot 0 with value 8
+OSS: Child PID 533002 slot 0 is requesting R7 at time 0:480000000
+OSS: Granting child PID 533002 slot 0 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   0   1   4   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:490000000
+OSS: Received message from child PID 533002 slot 0 with value 6
+OSS: Child PID 533002 slot 0 is requesting R5 at time 0:490000000
+OSS: Granting child PID 533002 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   0   0   4   0   4   1   
+
+
+OSS PID:533001 SysClockS: 0 SysClockNano: 500000000
+Process Table:
+Entry Occ LocalPID RealPID StartS StartN Blocked ReqResource
+    0   1        1  533002      0      0       0          -1
+    1   0        0       0      0      0       0          -1
+    2   0        0       0      0      0       0          -1
+    3   0        0       0      0      0       0          -1
+    4   0        0       0      0      0       0          -1
+    5   0        0       0      0      0       0          -1
+    6   0        0       0      0      0       0          -1
+    7   0        0       0      0      0       0          -1
+    8   0        0       0      0      0       0          -1
+    9   0        0       0      0      0       0          -1
+   10   0        0       0      0      0       0          -1
+   11   0        0       0      0      0       0          -1
+   12   0        0       0      0      0       0          -1
+   13   0        0       0      0      0       0          -1
+   14   0        0       0      0      0       0          -1
+   15   0        0       0      0      0       0          -1
+   16   0        0       0      0      0       0          -1
+   17   0        0       0      0      0       0          -1
+OSS: Blocked processes: [ ]
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   0   0   4   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:500000000
+OSS: Received message from child PID 533002 slot 0 with value -3
+OSS: Child PID 533002 slot 0 is releasing R2 at time 0:500000000
+OSS: Acknowledged release of R2 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   4   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:510000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:510000000
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   4   0   3   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:520000000
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:520000000
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   3   0   3   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:530000000
+OSS: Received message from child PID 533002 slot 0 with value -9
+OSS: Child PID 533002 slot 0 is releasing R8 at time 0:530000000
+OSS: Acknowledged release of R8 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   3   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:540000000
+OSS: Received message from child PID 533002 slot 0 with value -7
+OSS: Child PID 533002 slot 0 is releasing R6 at time 0:540000000
+OSS: Acknowledged release of R6 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   4   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:550000000
+OSS: Received message from child PID 533002 slot 0 with value 4
+OSS: Child PID 533002 slot 0 is requesting R3 at time 0:550000000
+OSS: Granting child PID 533002 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   1   0   0   4   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:560000000
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:560000000
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   1   0   0   3   0   4   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:570000000
+OSS: Received message from child PID 533002 slot 0 with value 10
+OSS: Child PID 533002 slot 0 is requesting R9 at time 0:570000000
+OSS: Granting child PID 533002 slot 0 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   1   0   0   3   0   4   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:580000000
+OSS: Received message from child PID 533002 slot 0 with value -4
+OSS: Child PID 533002 slot 0 is releasing R3 at time 0:580000000
+OSS: Acknowledged release of R3 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   0   0   3   0   4   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:590000000
+OSS: Received message from child PID 533002 slot 0 with value -5
+OSS: Child PID 533002 slot 0 is releasing R4 at time 0:590000000
+OSS: Acknowledged release of R4 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   1   0   3   0   4   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:600000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:600000000
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   1   0   3   0   3   0   
+
+OSS: Forked child P2 with PID 533003 in slot 1 at time 0:610000000
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:610000000
+OSS: Received message from child PID 533002 slot 0 with value -5
+OSS: Child PID 533002 slot 0 is releasing R4 at time 0:610000000
+OSS: Acknowledged release of R4 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   5   2   2   0   3   0   3   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:620000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 0:620000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   2   0   3   0   3   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:630000000
+OSS: Received message from child PID 533002 slot 0 with value 3
+OSS: Child PID 533002 slot 0 is requesting R2 at time 0:630000000
+OSS: Granting child PID 533002 slot 0 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   3   2   2   0   3   0   3   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:640000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 0:640000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   2   0   3   0   3   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:650000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:650000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   1   0   3   0   3   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:660000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 0:660000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   1   0   3   0   2   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:670000000
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:670000000
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   4   2   1   0   2   0   2   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:680000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 0:680000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   3   2   1   0   2   0   2   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:690000000
+OSS: Received message from child PID 533002 slot 0 with value -7
+OSS: Child PID 533002 slot 0 is releasing R6 at time 0:690000000
+OSS: Acknowledged release of R6 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   3   2   1   0   3   0   2   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:700000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 0:700000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   2   2   1   0   3   0   2   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:710000000
+OSS: Received message from child PID 533002 slot 0 with value -4
+OSS: Child PID 533002 slot 0 is releasing R3 at time 0:710000000
+OSS: Acknowledged release of R3 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   2   3   1   0   3   0   2   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:720000000
+OSS: Received message from child PID 533003 slot 1 with value -9
+OSS: Child PID 533003 slot 1 is releasing R8 at time 0:720000000
+OSS: Acknowledged release of R8 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   2   3   1   0   3   0   3   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:730000000
+OSS: Received message from child PID 533002 slot 0 with value 1
+OSS: Child PID 533002 slot 0 is requesting R0 at time 0:730000000
+OSS: Granting child PID 533002 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   2   3   1   0   3   0   3   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:740000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 0:740000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   2   3   1   0   3   0   2   0   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:750000000
+OSS: Received message from child PID 533002 slot 0 with value -10
+OSS: Child PID 533002 slot 0 is releasing R9 at time 0:750000000
+OSS: Acknowledged release of R9 from child PID 533002 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   2   3   1   0   3   0   2   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:760000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 0:760000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   1   0   3   0   2   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:770000000
+OSS: Received message from child PID 533002 slot 0 with value 5
+OSS: Child PID 533002 slot 0 is requesting R4 at time 0:770000000
+OSS: Granting child PID 533002 slot 0 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   3   0   2   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:780000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 0:780000000
+OSS: Could not grant request for R7 to child PID 533003 slot 1
+OSS: Blocking P2 PID 533003 in slot 1 waiting for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   3   0   2   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:790000000
+OSS: Received message from child PID 533002 slot 0 with value 7
+OSS: Child PID 533002 slot 0 is requesting R6 at time 0:790000000
+OSS: Granting child PID 533002 slot 0 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   2   0   2   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:800000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:800000000
+OSS: 60 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P1      5   5   1   2   5   5   3   5   3   4   
+P2      0   0   1   0   0   0   0   0   1   0   
+
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   2   0   1   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:810000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:810000000
+OSS: Granting child PID 533002 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   2   0   0   1   
+
+OSS: Sent turn message to child P1 PID 533002 slot 0 at time 0:820000000
+OSS: Received message from child PID 533002 slot 0 with value 9
+OSS: Child PID 533002 slot 0 is requesting R8 at time 0:820000000
+OSS: Could not grant request for R8 to child PID 533002 slot 0
+OSS: Blocking P1 PID 533002 in slot 0 waiting for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   3   3   0   0   2   0   0   1   
+
+
+OSS: No unblocked processes can run at time 0:830000000
+
+OSS: Deadlock detection run 1
+OSS: Running deadlock detection at time 0:830000000
+OSS: Deadlock detected involving: P1(slot 0) P2(slot 1)
+OSS: Attempting to resolve deadlock...
+OSS: Killing process P1 PID 533002 in slot 0
+OSS: Resources released are: R0:5 R1:5 R2:1 R3:2 R4:5 R5:5 R6:3 R7:5 R8:4 R9:4
+OSS: Unblocking P2 PID 533003 slot 1 and granting R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   5   5   5   5   4   4   5   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:830000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 0:830000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   5   5   5   5   4   4   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:840000000
+OSS: Received message from child PID 533003 slot 1 with value -9
+OSS: Child PID 533003 slot 1 is releasing R8 at time 0:840000000
+OSS: Acknowledged release of R8 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   5   5   5   5   4   5   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:850000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 0:850000000
+OSS: Granting child PID 533003 slot 1 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   5   5   4   5   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:860000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 0:860000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   4   5   4   5   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:870000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 0:870000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   4   5   4   4   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:880000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 0:880000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   4   5   4   3   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:890000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 0:890000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   4   5   3   3   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:900000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 0:900000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   4   5   4   5   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:910000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 0:910000000
+OSS: Granting child PID 533003 slot 1 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   3   5   4   5   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:920000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 0:920000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   4   3   5   4   5   3   2   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:930000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 0:930000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   5   3   2   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:940000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 0:940000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   5   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:950000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 0:950000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   5   3   2   5   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:960000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 0:960000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   4   3   2   5   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:970000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 0:970000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   2   3   5   4   4   3   2   5   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:980000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 0:980000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   2   3   5   4   4   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 0:990000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 0:990000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   4   3   2   4   
+
+
+OSS PID:533001 SysClockS: 1 SysClockNano: 0
+Process Table:
+Entry Occ LocalPID RealPID StartS StartN Blocked ReqResource
+    0   0        0       0      0      0       0          -1
+    1   1        2  533003      0 610000000       0          -1
+    2   0        0       0      0      0       0          -1
+    3   0        0       0      0      0       0          -1
+    4   0        0       0      0      0       0          -1
+    5   0        0       0      0      0       0          -1
+    6   0        0       0      0      0       0          -1
+    7   0        0       0      0      0       0          -1
+    8   0        0       0      0      0       0          -1
+    9   0        0       0      0      0       0          -1
+   10   0        0       0      0      0       0          -1
+   11   0        0       0      0      0       0          -1
+   12   0        0       0      0      0       0          -1
+   13   0        0       0      0      0       0          -1
+   14   0        0       0      0      0       0          -1
+   15   0        0       0      0      0       0          -1
+   16   0        0       0      0      0       0          -1
+   17   0        0       0      0      0       0          -1
+OSS: Blocked processes: [ ]
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  5   5   3   3   5   4   4   3   2   4   
+
+
+OSS: Deadlock detection run 2
+OSS: Running deadlock detection at time 1:0
+OSS: No deadlock detected
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:0
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 1:0
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   5   3   3   5   4   4   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:10000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:10000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   5   3   3   4   4   4   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:20000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:20000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   3   3   4   4   4   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:30000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 1:30000000
+OSS: Granting child PID 533003 slot 1 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   3   2   4   4   4   3   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:40000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 1:40000000
+OSS: 80 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P2      1   1   2   3   1   1   1   3   3   1   
+
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   3   2   4   4   4   2   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:50000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:50000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   3   2   3   4   4   2   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:60000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:60000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   3   2   3   3   4   2   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:70000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:70000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   2   2   3   3   4   2   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:80000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 1:80000000
+OSS: Granting child PID 533003 slot 1 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   2   1   3   3   4   2   2   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:90000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 1:90000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   2   1   3   3   4   2   1   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:100000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:100000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   1   1   3   3   4   2   1   4   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:110000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:110000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   1   1   3   3   4   2   1   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:120000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:120000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   1   1   3   3   4   2   1   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:130000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 1:130000000
+OSS: Granting child PID 533003 slot 1 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  4   4   1   0   3   3   4   2   1   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:140000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 1:140000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   4   1   0   3   3   4   2   1   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:150000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 1:150000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   4   1   0   3   3   4   2   1   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:160000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:160000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   4   0   0   3   3   4   2   1   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:170000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 1:170000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   0   0   3   3   4   2   1   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:180000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 1:180000000
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   0   0   3   3   4   2   0   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:190000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 1:190000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   3   4   2   0   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:200000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:200000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   2   3   4   2   0   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:210000000
+OSS: Received message from child PID 533003 slot 1 with value -5
+OSS: Child PID 533003 slot 1 is releasing R4 at time 1:210000000
+OSS: Acknowledged release of R4 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   3   4   2   0   3   
+
+OSS: Forked child P3 with PID 533004 in slot 0 at time 1:220000000
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:220000000
+OSS: Received message from child PID 533004 slot 0 with value 6
+OSS: Child PID 533004 slot 0 is requesting R5 at time 1:220000000
+OSS: Granting child PID 533004 slot 0 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   2   4   2   0   3   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:230000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:230000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   2   4   2   0   2   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:240000000
+OSS: Received message from child PID 533004 slot 0 with value 4
+OSS: Child PID 533004 slot 0 is requesting R3 at time 1:240000000
+OSS: Could not grant request for R3 to child PID 533004 slot 0
+OSS: Blocking P3 PID 533004 in slot 0 waiting for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   2   4   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:250000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 1:250000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   3   4   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:260000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:260000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   3   3   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:270000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:270000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   4   1   0   3   2   3   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:280000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:280000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   3   1   0   3   2   3   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:290000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:290000000
+OSS: 100 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P3      0   0   0   0   0   1   0   0   0   0   
+P2      3   2   4   5   2   2   3   3   5   3   
+
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   3   1   0   3   2   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:300000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:300000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   3   1   0   3   1   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:310000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 1:310000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:320000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 1:320000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   2   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:330000000
+OSS: Received message from child PID 533003 slot 1 with value -5
+OSS: Child PID 533003 slot 1 is releasing R4 at time 1:330000000
+OSS: Acknowledged release of R4 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   4   2   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:340000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:340000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   2   2   2   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:350000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:350000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   2   2   2   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:360000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:360000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   2   2   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:370000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 1:370000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   2   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:380000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:380000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   2   1   2   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:390000000
+OSS: Received message from child PID 533003 slot 1 with value -5
+OSS: Child PID 533003 slot 1 is releasing R4 at time 1:390000000
+OSS: Acknowledged release of R4 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   2   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:400000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:400000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:410000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:410000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:420000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 1:420000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:430000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 1:430000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   3   2   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:440000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:440000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   2   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:450000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:450000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:460000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 1:460000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   2   0   2   2   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:470000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:470000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   2   0   2   2   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:480000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:480000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:490000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 1:490000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   1   0   0   0   
+
+
+OSS PID:533001 SysClockS: 1 SysClockNano: 500000000
+Process Table:
+Entry Occ LocalPID RealPID StartS StartN Blocked ReqResource
+    0   1        3  533004      1 220000000       1           3
+    1   1        2  533003      0 610000000       0          -1
+    2   0        0       0      0      0       0          -1
+    3   0        0       0      0      0       0          -1
+    4   0        0       0      0      0       0          -1
+    5   0        0       0      0      0       0          -1
+    6   0        0       0      0      0       0          -1
+    7   0        0       0      0      0       0          -1
+    8   0        0       0      0      0       0          -1
+    9   0        0       0      0      0       0          -1
+   10   0        0       0      0      0       0          -1
+   11   0        0       0      0      0       0          -1
+   12   0        0       0      0      0       0          -1
+   13   0        0       0      0      0       0          -1
+   14   0        0       0      0      0       0          -1
+   15   0        0       0      0      0       0          -1
+   16   0        0       0      0      0       0          -1
+   17   0        0       0      0      0       0          -1
+OSS: Blocked processes: [ P3(slot 0 waiting R3) ]
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:500000000
+OSS: Received message from child PID 533003 slot 1 with value -2
+OSS: Child PID 533003 slot 1 is releasing R1 at time 1:500000000
+OSS: Acknowledged release of R1 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   3   1   0   2   2   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:510000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:510000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:520000000
+OSS: Received message from child PID 533003 slot 1 with value -8
+OSS: Child PID 533003 slot 1 is releasing R7 at time 1:520000000
+OSS: Acknowledged release of R7 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   1   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:530000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 1:530000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   2   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:540000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:540000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   2   1   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:550000000
+OSS: Received message from child PID 533003 slot 1 with value -5
+OSS: Child PID 533003 slot 1 is releasing R4 at time 1:550000000
+OSS: Acknowledged release of R4 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   1   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:560000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:560000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   1   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:570000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:570000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   0   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:580000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:580000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   1   0   3   0   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:590000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 1:590000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   1   0   3   1   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:600000000
+OSS: Received message from child PID 533003 slot 1 with value -9
+OSS: Child PID 533003 slot 1 is releasing R8 at time 1:600000000
+OSS: Acknowledged release of R8 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   1   0   3   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:610000000
+OSS: Received message from child PID 533003 slot 1 with value -2
+OSS: Child PID 533003 slot 1 is releasing R1 at time 1:610000000
+OSS: Acknowledged release of R1 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:620000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 1:620000000
+OSS: 120 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P3      0   0   0   0   0   1   0   0   0   0   
+P2      4   3   4   5   2   3   5   5   4   4   
+
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   1   0   3   1   0   0   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:630000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:630000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   3   1   0   0   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:640000000
+OSS: Received message from child PID 533003 slot 1 with value -8
+OSS: Child PID 533003 slot 1 is releasing R7 at time 1:640000000
+OSS: Acknowledged release of R7 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   3   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:650000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:650000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   2   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:660000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 1:660000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   2   1   1   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:670000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:670000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   1   1   1   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:680000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:680000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   2   0   0   1   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:690000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:690000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   0   0   1   1   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:700000000
+OSS: Received message from child PID 533003 slot 1 with value -4
+OSS: Child PID 533003 slot 1 is releasing R3 at time 1:700000000
+OSS: Acknowledged release of R3 from child PID 533003 slot 1
+OSS: Unblocking P3 PID 533004 slot 0 and granting R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   0   0   1   1   0   1   1   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:710000000
+OSS: Received message from child PID 533004 slot 0 with value -6
+OSS: Child PID 533004 slot 0 is releasing R5 at time 1:710000000
+OSS: Acknowledged release of R5 from child PID 533004 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   1   0   0   1   2   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:720000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 1:720000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   1   2   0   1   1   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:730000000
+OSS: Received message from child PID 533004 slot 0 with value -4
+OSS: Child PID 533004 slot 0 is releasing R3 at time 1:730000000
+OSS: Acknowledged release of R3 from child PID 533004 slot 0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   1   1   2   0   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:740000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 1:740000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   1   1   2   1   1   1   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:750000000
+OSS: Received message from child PID 533004 slot 0 with value 4
+OSS: Child PID 533004 slot 0 is requesting R3 at time 1:750000000
+OSS: Granting child PID 533004 slot 0 request for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   1   2   1   1   1   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:760000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:760000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   1   2   1   1   1   0   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:770000000
+OSS: Received message from child PID 533004 slot 0 with value 10
+OSS: Child PID 533004 slot 0 is requesting R9 at time 1:770000000
+OSS: Could not grant request for R9 to child PID 533004 slot 0
+OSS: Blocking P3 PID 533004 in slot 0 waiting for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   1   2   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:780000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 1:780000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   1   2   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:790000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 1:790000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   1   2   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:800000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 1:800000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   2   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:810000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:810000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:820000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 1:820000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+OSS: Unblocking P3 PID 533004 slot 0 and granting R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   1   1   1   0   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:830000000
+OSS: Received message from child PID 533004 slot 0 with value 1
+OSS: Child PID 533004 slot 0 is requesting R0 at time 1:830000000
+OSS: Granting child PID 533004 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   1   1   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:840000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 1:840000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   1   1   1   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:850000000
+OSS: Received message from child PID 533004 slot 0 with value 9
+OSS: Child PID 533004 slot 0 is requesting R8 at time 1:850000000
+OSS: Granting child PID 533004 slot 0 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:860000000
+OSS: Received message from child PID 533003 slot 1 with value 4
+OSS: Child PID 533003 slot 1 is requesting R3 at time 1:860000000
+OSS: Could not grant request for R3 to child PID 533003 slot 1
+OSS: Blocking P2 PID 533003 in slot 1 waiting for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   1   1   0   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:870000000
+OSS: Received message from child PID 533004 slot 0 with value 1
+OSS: Child PID 533004 slot 0 is requesting R0 at time 1:870000000
+OSS: Granting child PID 533004 slot 0 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   1   1   0   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:880000000
+OSS: Received message from child PID 533004 slot 0 with value -4
+OSS: Child PID 533004 slot 0 is releasing R3 at time 1:880000000
+OSS: Acknowledged release of R3 from child PID 533004 slot 0
+OSS: Unblocking P2 PID 533003 slot 1 and granting R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   1   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:890000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 1:890000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   1   0   0   1   
+
+OSS: Sent turn message to child P3 PID 533004 slot 0 at time 1:900000000
+OSS: Received message from child PID 533004 slot 0 with value 4
+OSS: Child PID 533004 slot 0 is requesting R3 at time 1:900000000
+OSS: Could not grant request for R3 to child PID 533004 slot 0
+OSS: Blocking P3 PID 533004 in slot 0 waiting for R3
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   1   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:910000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 1:910000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   1   0   0   1   1   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:920000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 1:920000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   1   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:930000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 1:930000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:940000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 1:940000000
+OSS: Could not grant request for R8 to child PID 533003 slot 1
+OSS: Blocking P2 PID 533003 in slot 1 waiting for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   0   0   0   1   
+
+
+OSS: No unblocked processes can run at time 1:950000000
+
+OSS: Deadlock detection run 3
+OSS: Running deadlock detection at time 1:950000000
+OSS: Deadlock detected involving: P3(slot 0) P2(slot 1)
+OSS: Attempting to resolve deadlock...
+OSS: Killing process P3 PID 533004 in slot 0
+OSS: Resources released are: R0:2 R8:1 R9:1
+OSS: 140 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P2      2   5   5   5   5   4   5   5   5   3   
+
+OSS: Unblocking P2 PID 533003 slot 1 and granting R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   0   0   2   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:950000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:950000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:960000000
+OSS: Received message from child PID 533003 slot 1 with value -8
+OSS: Child PID 533003 slot 1 is releasing R7 at time 1:960000000
+OSS: Acknowledged release of R7 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:970000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 1:970000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:980000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 1:980000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   1   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 1:990000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 1:990000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   0   0   1   0   1   
+
+
+OSS PID:533001 SysClockS: 2 SysClockNano: 0
+Process Table:
+Entry Occ LocalPID RealPID StartS StartN Blocked ReqResource
+    0   0        0       0      0      0       0          -1
+    1   1        2  533003      0 610000000       0          -1
+    2   0        0       0      0      0       0          -1
+    3   0        0       0      0      0       0          -1
+    4   0        0       0      0      0       0          -1
+    5   0        0       0      0      0       0          -1
+    6   0        0       0      0      0       0          -1
+    7   0        0       0      0      0       0          -1
+    8   0        0       0      0      0       0          -1
+    9   0        0       0      0      0       0          -1
+   10   0        0       0      0      0       0          -1
+   11   0        0       0      0      0       0          -1
+   12   0        0       0      0      0       0          -1
+   13   0        0       0      0      0       0          -1
+   14   0        0       0      0      0       0          -1
+   15   0        0       0      0      0       0          -1
+   16   0        0       0      0      0       0          -1
+   17   0        0       0      0      0       0          -1
+OSS: Blocked processes: [ ]
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   0   0   1   0   1   
+
+
+OSS: Deadlock detection run 4
+OSS: Running deadlock detection at time 2:0
+OSS: No deadlock detected
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:0
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 2:0
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   0   0   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:10000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 2:10000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:20000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:20000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:30000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:30000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:40000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 2:40000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:50000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:50000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:60000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 2:60000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:70000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 2:70000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:80000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:80000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:90000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 2:90000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:100000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 2:100000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   0   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:110000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 2:110000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:120000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 2:120000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:130000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:130000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:140000000
+OSS: Received message from child PID 533003 slot 1 with value -1
+OSS: Child PID 533003 slot 1 is releasing R0 at time 2:140000000
+OSS: Acknowledged release of R0 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  3   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:150000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:150000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  2   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:160000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:160000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:170000000
+OSS: Received message from child PID 533003 slot 1 with value -10
+OSS: Child PID 533003 slot 1 is releasing R9 at time 2:170000000
+OSS: Acknowledged release of R9 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  1   0   0   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:180000000
+OSS: Received message from child PID 533003 slot 1 with value 1
+OSS: Child PID 533003 slot 1 is requesting R0 at time 2:180000000
+OSS: Granting child PID 533003 slot 1 request for R0
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:190000000
+OSS: Received message from child PID 533003 slot 1 with value -2
+OSS: Child PID 533003 slot 1 is releasing R1 at time 2:190000000
+OSS: Acknowledged release of R1 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   0   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:200000000
+OSS: Received message from child PID 533003 slot 1 with value -5
+OSS: Child PID 533003 slot 1 is releasing R4 at time 2:200000000
+OSS: Acknowledged release of R4 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:210000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 2:210000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   1   0   0   0   1   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:220000000
+OSS: Received message from child PID 533003 slot 1 with value 10
+OSS: Child PID 533003 slot 1 is requesting R9 at time 2:220000000
+OSS: Granting child PID 533003 slot 1 request for R9
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   1   0   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:230000000
+OSS: Received message from child PID 533003 slot 1 with value -8
+OSS: Child PID 533003 slot 1 is releasing R7 at time 2:230000000
+OSS: Acknowledged release of R7 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   1   0   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:240000000
+OSS: Received message from child PID 533003 slot 1 with value 6
+OSS: Child PID 533003 slot 1 is requesting R5 at time 2:240000000
+OSS: Granting child PID 533003 slot 1 request for R5
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   0   0   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:250000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 2:250000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   0   1   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:260000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 2:260000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   0   2   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:270000000
+OSS: Received message from child PID 533003 slot 1 with value -7
+OSS: Child PID 533003 slot 1 is releasing R6 at time 2:270000000
+OSS: Acknowledged release of R6 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   0   3   1   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:280000000
+OSS: Received message from child PID 533003 slot 1 with value 8
+OSS: Child PID 533003 slot 1 is requesting R7 at time 2:280000000
+OSS: Granting child PID 533003 slot 1 request for R7
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   0   0   0   1   0   3   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:290000000
+OSS: Received message from child PID 533003 slot 1 with value -2
+OSS: Child PID 533003 slot 1 is releasing R1 at time 2:290000000
+OSS: Acknowledged release of R1 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   0   3   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:300000000
+OSS: Received message from child PID 533003 slot 1 with value -9
+OSS: Child PID 533003 slot 1 is releasing R8 at time 2:300000000
+OSS: Acknowledged release of R8 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   0   3   0   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:310000000
+OSS: Received message from child PID 533003 slot 1 with value -2
+OSS: Child PID 533003 slot 1 is releasing R1 at time 2:310000000
+OSS: Acknowledged release of R1 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   2   0   0   1   0   3   0   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:320000000
+OSS: Received message from child PID 533003 slot 1 with value 2
+OSS: Child PID 533003 slot 1 is requesting R1 at time 2:320000000
+OSS: Granting child PID 533003 slot 1 request for R1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   0   3   0   1   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:330000000
+OSS: Received message from child PID 533003 slot 1 with value 9
+OSS: Child PID 533003 slot 1 is requesting R8 at time 2:330000000
+OSS: 160 total granted requests reached. Printing allocation table.
+
+OSS: Current resources allocated to each process
+        R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+P2      5   4   5   5   4   5   2   5   5   5   
+
+OSS: Granting child PID 533003 slot 1 request for R8
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   0   3   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:340000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 2:340000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   0   2   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:350000000
+OSS: Received message from child PID 533003 slot 1 with value -6
+OSS: Child PID 533003 slot 1 is releasing R5 at time 2:350000000
+OSS: Acknowledged release of R5 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   1   2   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:360000000
+OSS: Received message from child PID 533003 slot 1 with value 7
+OSS: Child PID 533003 slot 1 is requesting R6 at time 2:360000000
+OSS: Granting child PID 533003 slot 1 request for R6
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   1   1   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:370000000
+OSS: Received message from child PID 533003 slot 1 with value 5
+OSS: Child PID 533003 slot 1 is requesting R4 at time 2:370000000
+OSS: Granting child PID 533003 slot 1 request for R4
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   0   0   0   1   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:380000000
+OSS: Received message from child PID 533003 slot 1 with value -3
+OSS: Child PID 533003 slot 1 is releasing R2 at time 2:380000000
+OSS: Acknowledged release of R2 from child PID 533003 slot 1
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   5   5   5   5   5   5   
+Available:  0   1   1   0   0   1   1   0   0   0   
+
+OSS: Sent turn message to child P2 PID 533003 slot 1 at time 2:390000000
+OSS: Received message from child PID 533003 slot 1 with value 3
+OSS: Child PID 533003 slot 1 is requesting R2 at time 2:390000000
+OSS: Granting child PID 533003 slot 1 request for R2
+
+OSS: Current resource table.
+Resource:   R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  
+Total:      5   5   5   5   OSS: Log line limit reached. Further file logging stopped.
