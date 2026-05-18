@@ -30,6 +30,8 @@
 #define TURN_INCREMENT_NS 10000000LL
 #define MAX_PCB_SIZE 18
 #define TEST_CHILDREN 3 //number of children to test with in this early stage. We will set this to 3 for now, but we will eventually want to test with more children
+#define DEADLOCK_CHECK_INTERVAL_NS 100000000LL
+
 const size_t BUFF_SZ = sizeof(unsigned int) * 2;
 
 static int msg_id_global = -1;
@@ -76,6 +78,9 @@ struct PCB {
     int localPid;
     int startSeconds;
     int startNano;
+
+    int blocked;
+    int requestedResource; 
 };
 
 struct ResourceDescriptor resourceTable[RESOURCE_CLASSES];
@@ -91,6 +96,10 @@ void clearPCBEntry(int slot) {
     pcbTable[slot].localPid = 0;
     pcbTable[slot].startSeconds = 0;
     pcbTable[slot].startNano = 0;
+
+    pcbTable[slot].blocked = 0;
+    pcbTable[slot].requestedResource = -1;
+    //requestedResource = -1 means the process is not currently waiting on any resource
 }
 
 void initPCBTable() {
@@ -134,20 +143,44 @@ void cleanupIPC() {
     }
 }
 
-void signal_handler(int sig) {
-    printf("OSS: received signal %d, shutting down...\n", sig);
+void releaseAllResources(int slot) {
+    if (slot < 0 || slot >= MAX_PCB_SIZE) {
+        fprintf(stderr, "OSS: invalid slot number %d\n", slot);
+        return;
+    }
+    //This function releases all resources allocated to a child process when it terminates.
+    //It takes in the slot number of the child process in the PCB table,
+    //and for each resource class, it checks how many instances of that resource class are allocated
+    //to that child process in the resource allocation table. 
+    //It then increments the available instances in the resource table by that amount, and sets the allocated instances in the resource allocation table for that child process to 0.
+    for (int i = 0; i < RESOURCE_CLASSES; i++) {
+        if (resourceAllocation[slot][i] > 0) {
+            resourceTable[i].availableInstances += resourceAllocation[slot][i];
+            resourceAllocation[slot][i] = 0;
+        }
+    }
+}
 
-    // In Step 6, there may be multiple children, so kill/reap all occupied slots.
+void killAllRunningChildren() {
     for (int i = 0; i < MAX_PCB_SIZE; i++) {
         if (pcbTable[i].occupied && pcbTable[i].pid > 0) {
             kill(pcbTable[i].pid, SIGTERM);
             waitpid(pcbTable[i].pid, NULL, 0);
+
+            releaseAllResources(i);
             clearPCBEntry(i);
         }
     }
+}
 
-    cleanupIPC();
-    exit(1);
+
+void signal_handler(int sig) {
+        printf("OSS: received signal %d, shutting down...\n", sig);
+
+        killAllRunningChildren(); // Ensure all child processes are terminated and reaped.
+        cleanupIPC();
+
+        exit(1);
 }
 
 long long getClockNS(unsigned int *clock) {
@@ -165,7 +198,6 @@ void setClockFromNS(unsigned int *clock, long long timeNS) {
     clock[0] = (unsigned int)(timeNS / NANOPERSEC); // Set seconds
     clock[1] = (unsigned int)(timeNS % NANOPERSEC); // Set nanoseconds
 }
-
 
 void addToClock(unsigned int *clock, long long timeToAddNS) {
     long long currentTimeNS = getClockNS(clock);
@@ -264,24 +296,6 @@ int releaseOneResource(int slot, int resourceNumber) {
     return 0;
 }
 
-void releaseAllResources(int slot) {
-    if (slot < 0 || slot >= MAX_PCB_SIZE) {
-        fprintf(stderr, "OSS: invalid slot number %d\n", slot);
-        return;
-    }
-    //This function releases all resources allocated to a child process when it terminates.
-    //It takes in the slot number of the child process in the PCB table,
-    //and for each resource class, it checks how many instances of that resource class are allocated
-    //to that child process in the resource allocation table. 
-    //It then increments the available instances in the resource table by that amount, and sets the allocated instances in the resource allocation table for that child process to 0.
-    for (int i = 0; i < RESOURCE_CLASSES; i++) {
-        if (resourceAllocation[slot][i] > 0) {
-            resourceTable[i].availableInstances += resourceAllocation[slot][i];
-            resourceAllocation[slot][i] = 0;
-        }
-    }
-}
-
 int sendTurnMessage(int msg_id, pid_t childPid, int slot) {
     struct Message msgToChild;
 
@@ -322,6 +336,147 @@ int sendGrantMessage(int msg_id, int childPid, int slot, int value) {
     }
 
     return 1;
+}
+
+void blockProcess(int slot, int resourceNumber) {
+    if (slot < 0 || slot >= MAX_PCB_SIZE) {
+        fprintf(stderr, "OSS: Error in blockProcess: invalid slot %d\n", slot);
+        return;
+    }
+
+    pcbTable[slot].blocked = 1;
+    pcbTable[slot].requestedResource = resourceNumber;
+
+    printf("OSS: Blocking P%d PID %d in slot %d waiting for R%d\n",
+           pcbTable[slot].localPid,
+           pcbTable[slot].pid,
+           slot,
+           resourceNumber);
+}
+
+void checkBlockedProcesses(int msg_id) {
+    for (int slot = 0; slot < MAX_PCB_SIZE; slot++) {
+        if (!pcbTable[slot].occupied || !pcbTable[slot].blocked) {
+            continue;
+        }
+
+        int resourceNumber = pcbTable[slot].requestedResource;
+
+        if (resourceNumber < 0 || resourceNumber >= RESOURCE_CLASSES) {
+            continue;
+        }
+
+        if (resourceTable[resourceNumber].availableInstances > 0) {
+            if (grantResource(slot, resourceNumber)) {
+                pcbTable[slot].blocked = 0;
+                pcbTable[slot].requestedResource = -1;
+
+                printf("OSS: Unblocking P%d PID %d slot %d and granting R%d\n",
+                       pcbTable[slot].localPid,
+                       pcbTable[slot].pid,
+                       slot,
+                       resourceNumber);
+
+                if (!sendGrantMessage(msg_id,
+                                      pcbTable[slot].pid,
+                                      slot,
+                                      resourceNumber + 1)) {
+                    fprintf(stderr,
+                            "OSS: Error sending grant message to unblocked process PID %d\n",
+                            pcbTable[slot].pid);
+                }
+            }
+        }
+    }
+}
+
+int countBlockedProcesses() {
+    int count = 0;
+
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        if (pcbTable[i].occupied && pcbTable[i].blocked) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+int runDeadlockDetection(unsigned int *clock) {
+    int work[RESOURCE_CLASSES];
+    int finish[MAX_PCB_SIZE];
+    int deadlockedCount = 0;
+
+    for (int r = 0; r < RESOURCE_CLASSES; r++) {
+        work[r] = resourceTable[r].availableInstances;
+    }
+
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        if (!pcbTable[i].occupied) {
+            finish[i] = 1;
+        } else {
+            finish[i] = 0;
+        }
+    }
+
+    int changed = 1;
+
+    while (changed) {
+        changed = 0;
+
+        for (int i = 0; i < MAX_PCB_SIZE; i++) {
+            if (finish[i]) {
+                continue;
+            }
+
+            int canFinish = 1;
+
+            if (pcbTable[i].blocked) {
+                int requested = pcbTable[i].requestedResource;
+
+                if (requested < 0 ||
+                    requested >= RESOURCE_CLASSES ||
+                    work[requested] <= 0) {
+                    canFinish = 0;
+                }
+            }
+
+            if (canFinish) {
+                for (int r = 0; r < RESOURCE_CLASSES; r++) {
+                    work[r] += resourceAllocation[i][r];
+                }
+
+                finish[i] = 1;
+                changed = 1;
+            }
+        }
+    }
+
+    printf("\nOSS: Running deadlock detection at time %u:%u\n",
+           clock[0],
+           clock[1]);
+
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        if (pcbTable[i].occupied && !finish[i]) {
+            if (deadlockedCount == 0) {
+                printf("OSS: Deadlock detected involving:");
+            }
+
+            printf(" P%d(slot %d)",
+                   pcbTable[i].localPid,
+                   i);
+
+            deadlockedCount++;
+        }
+    }
+
+    if (deadlockedCount > 0) {
+        printf("\n");
+    } else {
+        printf("OSS: No deadlock detected\n");
+    }
+
+    return deadlockedCount;
 }
 
 int main(int argc, char *argv[]) {
@@ -409,13 +564,13 @@ int main(int argc, char *argv[]) {
         // Fork a child process to run the user program.
         if (pid == -1) {
             fprintf(stderr, "OSS: Error in fork\n");
+            killAllRunningChildren();
             cleanupIPC(); // Clean up any IPC resources oss has created so far.
             return EXIT_FAILURE;
         }
 
         if (pid == 0) {
-            //For step 5, let's give the child process some time to stick around before it terminates. Later this should come from the -t command line opt
-            execl("./user_proc", "user_proc", "0", "100000000",(char *)NULL); // Execute the user program in the child process
+            execl("./user_proc", "user_proc", "1", "0",(char *)NULL); // Execute the user program in the child process
 
             perror("OSS: execl failed");
             exit(EXIT_FAILURE);
@@ -427,26 +582,46 @@ int main(int argc, char *argv[]) {
         pcbTable[slot].localPid = launchedChildren + 1;
         pcbTable[slot].startSeconds = clock[0];
         pcbTable[slot].startNano = clock[1];
+        pcbTable[slot].blocked = 0;
+        pcbTable[slot].requestedResource = -1;
 
         printf("OSS: Forked child P%d with PID %d in slot %d\n", pcbTable[slot].localPid, pid, slot);
         launchedChildren++;
         activeChildren++;
 }
 
+    long long nextDeadLockCheckNS =DEADLOCK_CHECK_INTERVAL_NS;
+    int deadlockDetectionRuns = 0;
+
     while (activeChildren > 0) {
+        int didWorkThisRun = 0; 
+            // Tracks whether oss was able to give at least one unblocked child a turn
+            // during this full pass through the PCB table.
+            // If this stays 0, then every active child is blocked, which means oss
+            // cannot make normal progress and should run deadlock detection.
+        checkBlockedProcesses(msg_id);
+
     for (int slot = 0; slot < MAX_PCB_SIZE; slot++) {
-        if(!pcbTable[slot].occupied) {
+        if(!pcbTable[slot].occupied || pcbTable[slot].blocked) {
+            // Skip empty PCB slots and blocked children.
+            // Blocked children are waiting inside msgrcv for oss to grant a resource,
+            // so they should not receive normal turn messages.
             continue;
         }
 
+        didWorkThisRun = 1; 
+            // We found at least one active, unblocked child and are about to give it a turn.
+            // This means the system is still making progress during this pass.
         pid_t pid = pcbTable[slot].pid;
 
         if(!sendTurnMessage(msg_id, pid, slot)){
             kill(pid, SIGTERM);
             waitpid(pid, NULL, 0);
+
             releaseAllResources(slot); // Release all resources allocated to this child process in case of error, so that other child processes can continue to run without being blocked by this one.
             clearPCBEntry(slot);
             activeChildren--;
+
             continue;
         }
 
@@ -454,15 +629,17 @@ int main(int argc, char *argv[]) {
 
         struct Message msgFromChild;
 
-
         if (msgrcv(msg_id, &msgFromChild, sizeof(struct Message) - sizeof(long), 1, 0) == -1) {
             //OSS must receive messages from the child where mtype is 1.
             perror("OSS: msgrcv failed");
+
             kill(pid, SIGTERM);
             waitpid(pid, NULL, 0);
+
             releaseAllResources(slot); // Release all resources allocated to this child process in case of error, so that other child processes can continue to run without being blocked by this one.
             clearPCBEntry(slot);
             activeChildren--;
+
             continue;        
         }
 
@@ -481,25 +658,17 @@ int main(int argc, char *argv[]) {
                 if(!sendGrantMessage(msg_id, msgFromChild.pid, msgFromChild.slot, msgFromChild.value)){
                     kill(pid, SIGTERM);
                     waitpid(pid, NULL, 0);
+
                     releaseAllResources(slot);
                     clearPCBEntry(slot);
                     activeChildren--;
+
                     continue;
                 } 
             } else {
                 printf("OSS: Could not grant request for R%d to child PID %d slot %d\n", resourceNumber, msgFromChild.pid, msgFromChild.slot);
-                
-                //Full blocking is not implemented yet, so we will just send a grant message with value 0 to indicate the request is not granted,
-                // so that user_proc does not hang waiting for a grant message 
-                //that will never come in this step. 
-                if (!sendGrantMessage(msg_id, msgFromChild.pid, msgFromChild.slot, 0)) {
-                    kill(pid, SIGTERM);
-                    waitpid(pid, NULL, 0);
-                    releaseAllResources(slot);
-                    clearPCBEntry(slot);
-                    activeChildren--;
-                    continue;
-                }
+
+                blockProcess(msgFromChild.slot, resourceNumber);
             }
 
             printResourceTable();
@@ -516,12 +685,14 @@ int main(int argc, char *argv[]) {
                 printf("OSS: Could not release R%d from child PID %d slot %d\n", resourceNumber, msgFromChild.pid, msgFromChild.slot);
             }
 
+            checkBlockedProcesses(msg_id); 
             printResourceTable();
         } else {
             //Value 0 from the child means the child is terminating.
             printf("OSS: Child PID %d slot %d is terminating at time %u:%u\n", msgFromChild.pid, msgFromChild.slot, clock[0], clock[1]);
 
             releaseAllResources(msgFromChild.slot); 
+            checkBlockedProcesses(msg_id); 
 
             printResourceTable();
 
@@ -534,8 +705,37 @@ int main(int argc, char *argv[]) {
             // Advance simulated time by 10ms after each completed child turn.
             addToClock(clock, TURN_INCREMENT_NS);
             }
+        
+        long long currentNS = getClockNS(clock);
+
+        if (currentNS >= nextDeadLockCheckNS) {
+            deadlockDetectionRuns++;
+            printf("OSS: Deadlock detection run %d\n", deadlockDetectionRuns);
+            runDeadlockDetection(clock);
+
+            while (nextDeadLockCheckNS <= currentNS) {
+                nextDeadLockCheckNS += DEADLOCK_CHECK_INTERVAL_NS;
+                }
+            }
         }
+
+        if (activeChildren > 0 && !didWorkThisRun) {
+            // If there are still active children, but none of them could run during
+            // this pass, then all remaining active children must be blocked.
+            // This is the situation where deadlock detection becomes important.
+            printf("\nOSS: No unblocked processes can run at time %u:%u\n", clock[0], clock[1]);
+            int deadlocked = runDeadlockDetection(clock);
+
+            if (deadlocked > 0) {
+                printf("OSS: Step 7 detected deadlock. Stopping test and cleaning up remaining children.\n");
+                killAllRunningChildren();
+                activeChildren = 0;
+            } else {
+                checkBlockedProcesses(msg_id);
+                addToClock(clock, TURN_INCREMENT_NS);
+            }
     }
+}
         cleanupIPC(); // Detach from shared memory and mark shared memory and message queue for deletion
         printf("OSS: Shared memory and message queue cleaned up.\n");
         return EXIT_SUCCESS;
