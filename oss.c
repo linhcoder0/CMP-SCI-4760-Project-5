@@ -1,4 +1,13 @@
-//• Implement clock in shared memory; possibly reuse the one from last project.
+// • Start by creating a Makefile that compiles and builds the two executables: oss and user_proc.
+// • Implement clock in shared memory; possibly reuse the one from last project.
+// • Have oss create resource descriptors and populate them with instances.
+// • Use message queues to communicate requests, allocation, and release of resources to children. Start by testing one child
+// process just requesting one resource and then terminating
+// • Have the child processes now stick around until their time is up, requesting and releases
+// • Now test for multiple children requesting and releases
+// • If all is working now, implement deadlock detection to detect when a deadlock exists
+// • Lastly, implement oss terminating one of the deadlocked processes
+// • Keep track of output statistics in log file.
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -14,6 +23,9 @@
 #include <stdarg.h>
 #include <time.h>
 
+//assignment says there are 10 resource classes and 5 instances of each resource class
+#define RESOURCE_CLASSES 10
+#define INSTANCES_PER_RESOURCE 5 
 #define NANOPERSEC 1000000000LL //1 second = 1 billion nanoseconds
 
 const size_t BUFF_SZ = sizeof(unsigned int) * 2;
@@ -70,6 +82,48 @@ void addToClock(unsigned int *clock, long long timeToAddNS) {
     setClockFromNS(clock, newTimeNS);
 }
 
+struct ResourceDescriptor {
+    //total instances of this resource class in the system
+    int totalInstances;
+    int availableInstances;
+};
+
+struct ResourceDescriptor resourceTable[RESOURCE_CLASSES];
+// We will use this resource table to keep track of the total instances and available instances for each resource class.
+
+void initializeResourceTable() {
+    // Initialize the resource table with the total instances and available instances for each resource class.
+    for (int i = 0; i < RESOURCE_CLASSES; i++) {
+        resourceTable[i].totalInstances = INSTANCES_PER_RESOURCE;
+        resourceTable[i].availableInstances = INSTANCES_PER_RESOURCE;
+    }
+}
+
+void printResourceTable() {
+    //Print the resource table in a readable format.
+    //We will print the total instances and available instances for each resource class 
+
+    printf("\nOSS: Resource table initialized.\n");
+    printf("Resource:   ");
+
+    for (int i = 0; i < RESOURCE_CLASSES; i++) {
+        printf("R%-3d", i);
+    }
+
+    printf("\nTotal:      ");
+
+    for (int i = 0; i < RESOURCE_CLASSES; i++) {
+        printf("%-4d", resourceTable[i].totalInstances);
+    }
+
+    printf("\nAvailable:  ");
+
+    for (int i = 0; i < RESOURCE_CLASSES; i++) {
+        printf("%-4d", resourceTable[i].availableInstances);
+    }
+
+    printf("\n\n");
+}
 
 int main(int argc, char *argv[]) {
     // Set up signal handlers for graceful shutdown in case of SIGINT or SIGTERM which is sent when the user presses Ctrl+C or when the process is terminated. 
@@ -108,6 +162,9 @@ int main(int argc, char *argv[]) {
     printf("OSS: Shared memory clock initialized.\n");
     printf("OSS: Clock is %u:%u\n", clock[0], clock[1]);
 
+    initializeResourceTable(); // Initialize the resource table with total and available instances
+    printResourceTable(); // Print the initialized resource table
+
     addToClock(clock, 10000000);
     printf("OSS: Clock after adding 10ms is %u:%u\n", clock[0], clock[1]);
 
@@ -122,5 +179,4 @@ int main(int argc, char *argv[]) {
     printf("OSS: Shared memory cleaned up.\n");
 
     return EXIT_SUCCESS;    
-    return 0;
 }

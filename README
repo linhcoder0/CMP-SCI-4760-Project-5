@@ -1,0 +1,227 @@
+CS 4760 Operating Systems
+Assignment # 5 Due Date: April 21, 2026
+Resource Management
+Purpose
+The goal of this homework is to learn about resource management inside an operating system. In particular our project will be
+using deadlock detection. That is, your code will allow processes to request or release resources and then oss will periodically
+check for a deadlock. If the deadlock is detected, it will terminate some of the deadlocked processes.
+For this project, workers must be alternatively communicate with oss using messages. You can use the fixed rotation of project
+3 or the queue of 4, but if you start with the base of project 4, you will have to change how the blocked queue works, as the
+processes will always be requesting or releasing resources. For simplicity, processes will only be requesting one of any resource
+or releasing one of any resource at a time.
+Task
+In this part of the assignment, you will design and implement a resource management module for our Operating System
+Simulator oss. We will be using deadlock detection to deal with deadlocks if they occur.
+Operating System Simulator
+This will be your main program and serve as the master process. You will start the operating system simulator (call the
+executable oss) as the main process who will fork multiple children at specific times as in previous projects. You will take in
+the same command line options as the previous project.
+oss should be called as follows:
+oss [-h] [-n proc] [-s simul] [-t timeLimitForChildren]
+[-i fractionOfSecondToLaunchChildren] [-f logfile]
+The parameters are identical to previous projects, with -t setting the max time a child will exist in the system.
+The -f parameter is for a log file, where you should write the output of oss (NOT the workers). The output of oss should both
+go to this log file, as well as the screen. This is for ease of use for this project, so yes I realize your output will be done in two
+places. Again, THE WORKER OUTPUT SHOULD NOT GO TO THIS FILE.
+In the beginning, oss will allocate shared memory for our clock. In addition, you will need a process table as we had in
+previous projects, but possibly with different entries. You will also need to allocate a resource table. All the resources are static
+and should have a fixed number of instances defined in a header file (as the user processes will also have to know the total
+resources in the system.. The resource descriptor is a fixed size structure and contains information on managing the resources
+within oss. Make sure that you allocate space to keep track of activities that affect the resources, such as request, allocation,
+and release. We have 10 resources classes, with 5 instances of each resource class. User processes will never request more
+than exist total in the system. However, multiple users combined will end up requesting more resources total than exist in the
+system, which would result in some of them being blocked.
+oss will have to maintain data on what resources each process has been allocated, what they are requesting and the resources
+left in the system. This can be set up as separate matrices or some of them can be integrated into your process table. If you
+wanted to integrate some of this data into your process table, you could have a process table of:
+struct PCB {
+int occupied; // either true or false
+pid_t pid; // process id of this child
+int startSeconds; // time when it was created
+int startNano; // time when it was created
+int eventWaitSec; // when does its event happen?
+int eventWaitNano; // when does its event happen?
+int blocked; // is this process waiting on event?
+int resourcesAllocated[10]; // current resources it has
+int requestedResource; // what resource it is currently requesting
+};
+struct PCB processTable[20];
+After the resources have been set up, fork initially start by creating a child process. Make sure that you never have more than
+18 user processes in the system no matter what options are given, but other than that periodically try to add a process to the
+system as long as it does not violate our limits. If it would violate the limits, just do not launch it and wait until the next interval
+to try and launch it (but do not consider it as having launched as far as the total). The workers will run in a loop constantly till
+they decide to terminate.
+oss should grant resources when asked as long as it can find sufficient quantity to allocate. If it cannot allocate resources, the
+process goes in a queue waiting for the resource requested and is not sent a message back, essentially leaving it in a blocked
+state. It gets awakened by a message when the resources become available, that is whenever the resources are released by a
+process. Make sure to release any resources claimed by a process when it is terminated.
+Overview of the procedure
+\begin{verbatim}
+while (stillChildrenToLaunch or childrenInSystem) {
+determine if we should launch a child
+if so, launch a child and update pcb
+check if any blocked process waiting on a resource can be unblocked
+mark it as unblocked and grant it the request
+(no need to send it a message now)
+update appropriate data structures
+increment clock by 10ms
+if there is at least one unblocked process
+Select one of them and send it a message
+receive a message back
+if it requested a resource
+if that resource is available
+grant it
+else
+block the process
+if it is releasing a resource
+make that resource available
+if it is terminating
+release all its resources
+clear out its pcb
+update appropriate data structures
+update statistics like total wait time, etc
+2
+Increment the clock by 10ms
+Every half a second, output the process table and a list
+of blocked processes to the screen and the log file
+Every half a second (along with process table), also
+output resource table and resources still available
+Every second, check for deadlock
+If deadlock exists, terminate one of the processes in the deadlock
+}
+Output statistics
+User Processes
+The user processes when they are launched will be given a maximum time as before. Then, they will go into a loop, examining
+the system clock and then randomly deciding to request or release resources or whether their time to terminate has happened.
+This requires that they keep track of the total resources they have been granted, as well as the total in the system. Note that as
+the total resources in the system is constant, this can be done with a header file as previously described.
+The user loop would look something like this:
+while (1) {
+receive a message from oss
+did oss tell me to terminate?
+break;
+is my time up?
+send a message to oss that I am done
+break;
+determine if I should request or release a resource
+determine which one I should request or release
+send message to oss requesting or releasing that resource
+}
+Make sure that the process does not ask for more than the maximum number of resource instances at any given time. The total
+for a process (request + allocation) should always be less than or equal to the maximum number of instances of a specified
+resource. This requires that each process keep track of how many resources they have of each particular type and for them to
+know the meximums but they DO NOT need to know what any other process wants or needs. Just to emphasize this point, a
+process could over time end up requesting all the resources of the system and in fact would be granted this if it was the only
+process in the system.
+As each process could request or release resources, we should prefer that processes request resources more than they release
+them. This should be a parameter in your system for this. I would suggest starting at about 70% request and 30% release and
+tune from there.
+3
+If processes notice that their time has passed in the system, they should terminate by sending a message to oss that they are
+releasing all their resources and terminating.
+While you can choose to communicate this information how you want, I would suggest sending a positive integer for a resource
+request, a negative integer for a resource release and a 0 for termination. So for example, a message of 4 would indicate
+requesting one instance of resource 4, while a -4 would indicate a release of one instance of resource 4.
+Ending report
+oss should do an end report with some statistics. Have it output the total number of resources requested and the amount of
+times deadlock detection was ran and how many processes did it have to terminate. Also the percentage of requests that were
+granted immediately versus the amount of total requests.
+Make sure that you have signal handling to terminate all processes, if needed. In case of abnormal termination, make sure to
+remove shared memory and message queues.
+When writing to the log file, you should have two ways of doing this. One setting (verbose on) should indicate in the log file
+every time oss gives someone a requested resource or when oss sees that a user has finished with a resource. It should also
+log the time when a request is not granted and the process goes to sleep waiting for the resource. In addition, every 20 granted
+requests, output a table showing the current resources allocated to each process. For debugging early on, you might want to do
+this each time (this will be very spammy).
+Log Output
+An example of possible output might be:
+Master has detected Process P0 requesting R2 at time xxx:xxx
+Master granting P0 request R2 at time xxx:xxx
+Master has acknowledged Process P0 releasing R2 at time xxx:xxx
+Current system resources
+Master running deadlock detection at time xxx:xxxx:
+Processes P3, P4, P7 deadlocked
+Attempting to resolve deadlock...
+Killing process P3:
+Resources released are as follows: R1:1, R3:1, R4:5
+Master has detected Process P7 requesting R3 at time xxx:xxxx
+...
+Totat resources available:
+R0 R1 R2 R3
+2 1 3 0
+Resources allocated:
+R0 R1 R2 R3 ...
+P0 2 1 3 4 ...
+P1 0 1 1 0 ...
+P2 3 1 0 0 ...
+0 0 0 0 0 ...
+P4 0 0 3 2 ...
+P7 1 2 0 5 ...
+...
+Regardless of which option is set, keep track of how many times oss has written to the file. If you have done 10000 lines of
+output to the file, stop writing any output until you have finished the run.
+Note: I give you broad leeway on this project to handle notifications to oss and how you resolve the deadlock. Just make sure
+that you document what you are doing in your README.
+4
+
+Suggested Implementation Steps
+I’ll suggest that you do the project incrementally. You are free and encouraged to reuse any functions from your previous
+projects.
+• Start by creating a Makefile that compiles and builds the two executables: oss and user_proc.
+• Implement clock in shared memory; possibly reuse the one from last project.
+• Have oss create resource descriptors and populate them with instances.
+• Use message queues to communicate requests, allocation, and release of resources to children. Start by testing one child
+process just requesting one resource and then terminating
+• Have the child processes now stick around until their time is up, requesting and releases
+• Now test for multiple children requesting and releases
+• If all is working now, implement deadlock detection to detect when a deadlock exists
+• Lastly, implement oss terminating one of the deadlocked processes
+• Keep track of output statistics in log file.
+
+Feel free to ask questions about clarifications.
+Note that as it is only possible for the system to ”deadlock” if more than one process is running, I highly suggest testing with
+only one process until the normal procedure works flawlessly. That is, the one process will end up over time requesting all
+the resources in the system. Ensure the tables fill up and look correct. Do all this before trying to run with two processes.
+Implement deadlock detection last, as falsely detecting deadlock is often a problem with this project.
+Termination Criterion
+oss should stop generating processes if it has already generated up to n processes, or if more than 5 real-time seconds have
+passed.
+Criteria for Success
+Make sure that the code adheres to specifications. Document the code appropriately to show where the specs are implemented.
+You must clean up after yourself. That is, after the program terminates, whether normally or by force, there should be no shared
+memory, semaphore, or message queue that is left allocated to you.
+README
+It is required that you submit a README file. This file should start with the following:
+Name: Yourname
+Date: When project started
+Environment: What environment you used (linux, vi)
+How to compile the project:
+Type ’make’
+Example of how to run the project:
+./oss -n 3 -s 2 -t 4 -i 0.6 -f log.txt
+5
+In addition, if you use generative AI, you must include a section describing your use of generative AI in detail. This should
+include a bare minimum of what generative AI was used and some list of prompts that you used. I also want at least a few
+sentence description of in general how useful you found it.
+If you are not using generative AI, please explain why not. This is not a problem of course.
+For example, at a bare minimum something like:
+Generative AI used : chatgpt
+Prompts:
+Please give me a C++ command line program to play tic-tac-toe between two people
+Change the previous code to add the capability to play multiple games
+Add the capability to keep track of the previous record of players.
+Explain to me why dogs like fire hydrants.
+Given the previous code, please add a command line option
+to allow one player to cheat
+etc
+Summary: The initial game generated worked well, but it had one bug
+that I had to fix.
+It did not work to generate the cheating option as chatgpt
+claimed I was unethical.
+Submission
+Handin an electronic copy of all the sources, README, Makefile(s), and results. Create your programs in a directory called
+username.6 where username is your login name on opsys. Once you are done with everything, remove the executables and
+object files, and issue the following commands:
+chmod 700 username.5
+cp -p -r username.5 /home/hauschildm/cs4760/assignment5
+6
