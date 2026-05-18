@@ -28,14 +28,15 @@
 #define INSTANCES_PER_RESOURCE 5 
 #define NANOPERSEC 1000000000LL //1 second = 1 billion nanoseconds
 #define TURN_INCREMENT_NS 10000000LL
-
+#define MAX_PCB_SIZE 18
+#define TEST_CHILDREN 3 //number of children to test with in this early stage. We will set this to 3 for now, but we will eventually want to test with more children
 const size_t BUFF_SZ = sizeof(unsigned int) * 2;
 
 static int msg_id_global = -1;
 // global variable to store the message queue id
 
-static pid_t child_pid_global = -1;
-// global variable to store one child pid for this early one-child test
+// static pid_t child_pid_global = -1;
+// // global variable to store one child pid for this early one-child test
 
 static int shm_id_global = -1; 
 //global variable to store the shared memory id
@@ -69,12 +70,45 @@ struct ResourceDescriptor {
     int availableInstances;
 };
 
+struct PCB {
+    int occupied;
+    pid_t pid;
+    int localPid;
+    int startSeconds;
+    int startNano;
+};
+
 struct ResourceDescriptor resourceTable[RESOURCE_CLASSES];
 // Keeps track of total and available instances for each resource class.
 
-int resourceAllocation[1][RESOURCE_CLASSES];
-// For Step 5, we only have one child, so one row is enough.
-// Later this should become something like resourceAllocation[MAX_PCB_SIZE][RESOURCE_CLASSES].
+struct PCB pcbTable[MAX_PCB_SIZE];
+
+int resourceAllocation[MAX_PCB_SIZE][RESOURCE_CLASSES];
+
+void clearPCBEntry(int slot) {
+    pcbTable[slot].occupied = 0;
+    pcbTable[slot].pid = 0;
+    pcbTable[slot].localPid = 0;
+    pcbTable[slot].startSeconds = 0;
+    pcbTable[slot].startNano = 0;
+}
+
+void initPCBTable() {
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        clearPCBEntry(i);
+    }
+}
+
+int findFreePCBSlot() {
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        if (pcbTable[i].occupied == 0) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 
 void cleanupIPC() {
     if (clock_global != NULL && clock_global != (void *)-1)  {
@@ -103,10 +137,13 @@ void cleanupIPC() {
 void signal_handler(int sig) {
     printf("OSS: received signal %d, shutting down...\n", sig);
 
-    if (child_pid_global > 0) {
-        kill(child_pid_global, SIGTERM);
-        waitpid(child_pid_global, NULL, 0);
-        child_pid_global = -1;
+    // In Step 6, there may be multiple children, so kill/reap all occupied slots.
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        if (pcbTable[i].occupied && pcbTable[i].pid > 0) {
+            kill(pcbTable[i].pid, SIGTERM);
+            waitpid(pcbTable[i].pid, NULL, 0);
+            clearPCBEntry(i);
+        }
     }
 
     cleanupIPC();
@@ -173,20 +210,19 @@ void printResourceTable() {
 }
 
 void initResourceAllocation() {
-    // Initialize the resource allocation table.
-    // resourceAllocation[0][i] stores how many instances of resource i
-    // are currently allocated to the one child process.
-    for (int i = 0; i < RESOURCE_CLASSES; i++) {
-        resourceAllocation[0][i] = 0;
+        // Initialize the resource allocation table for every possible PCB slot.
+
+    for (int i = 0; i < MAX_PCB_SIZE; i++) {
+        for (int j = 0; j < RESOURCE_CLASSES; j++) {
+            resourceAllocation[i][j] = 0;
+        }
     }
 }
 
 int grantResource(int slot, int resourceNumber) {
-    if(slot != 0) {
-        // In this step, we only have one child process, so the slot number must be 0. 
-        // If we receive a request with a different slot number, that means there is an error in the program logic, because we should not have any other slot numbers being used in the messages between oss and worker processes at this point. 
-        // We will print an error message and return 0 to indicate that the resource request cannot be granted due to invalid slot number.
-        fprintf(stderr, "OSS: Error in grantResource: invalid slot number %d\n", slot);
+        // Attempt to grant one instance of resourceNumber to the child in the given slot.
+    if (slot < 0 || slot >= MAX_PCB_SIZE) {
+        fprintf(stderr, "OSS: invalid slot number %d\n", slot);
         return 0;
     }
     //This function attempts to grant a resource request from a child process. 
@@ -207,8 +243,10 @@ int grantResource(int slot, int resourceNumber) {
 }
 
 int releaseOneResource(int slot, int resourceNumber) {
-    if (slot != 0) {
-        fprintf(stderr, "OSS: Error in releaseOneResource: invalid slot number %d\n", slot);
+        // Release one instance of resourceNumber from the child in the given slot.
+
+    if (slot < 0 || slot >= MAX_PCB_SIZE) {
+        fprintf(stderr, "OSS: invalid slot number %d\n", slot);
         return 0;
     }
 
@@ -227,11 +265,8 @@ int releaseOneResource(int slot, int resourceNumber) {
 }
 
 void releaseAllResources(int slot) {
-    if(slot != 0) {
-        // In this step, we only have one child process, so the slot number must be 0. 
-        // If we receive a request with a different slot number, that means there is an error in the program logic, because we should not have any other slot numbers being used in the messages between oss and worker processes at this point. 
-        // We will print an error message and return without releasing any resources due to invalid slot number.
-        fprintf(stderr, "OSS: Error in releaseAllResources: invalid slot number %d\n", slot);
+    if (slot < 0 || slot >= MAX_PCB_SIZE) {
+        fprintf(stderr, "OSS: invalid slot number %d\n", slot);
         return;
     }
     //This function releases all resources allocated to a child process when it terminates.
@@ -254,7 +289,7 @@ int sendTurnMessage(int msg_id, pid_t childPid, int slot) {
     // Child receives messages where mtype equals its own pid.
 
     msgToChild.value = 1;
-    // For Step 5, this value only means "take another turn."
+    // For Step 6, this value only means "take another turn."
     // user_proc does not treat this as a resource request.
 
     msgToChild.pid = getpid();
@@ -294,6 +329,8 @@ int main(int argc, char *argv[]) {
     signal(SIGINT, signal_handler);
     signal(SIGTERM, signal_handler);
 
+    initPCBTable(); // Initialize the PCB table to mark all slots as unoccupied and reset all fields.
+
     key_t shm_key = ftok("oss.c", 0); 
     // Generate a unique key for shared memory using ftok. 
     if (shm_key == (key_t)-1) { 
@@ -302,7 +339,9 @@ int main(int argc, char *argv[]) {
     }
     
     int shm_id = shmget(shm_key, BUFF_SZ, IPC_CREAT | 0700);
-    //create a shm segment with the generated key, size of 2 unsigned ints (for seconds and nanoseconds), and permissions of 0700 (read/write/execute for owner only).
+    // Create a shared memory segment with space for two unsigned ints:
+    // clock[0] is seconds and clock[1] is nanoseconds 
+    // permissions of 0700 (read/write/execute for owner only).
     if (shm_id == -1) {
         fprintf(stderr,"OSS: Error in shmget\n");
         return EXIT_FAILURE;
@@ -344,6 +383,7 @@ int main(int argc, char *argv[]) {
 
     int msg_id = msgget(msg_key, IPC_CREAT | 0700);
     // Create a message queue with the generated key and permissions of 0700 (read/write/execute for owner only).
+
     if(msg_id == -1) {
         fprintf(stderr,"OSS: Error in msgget\n");
         cleanupIPC(); // Clean up any IPC resources oss has created so far.
@@ -354,70 +394,100 @@ int main(int argc, char *argv[]) {
 
     printf("OSS: Message queue created with id %d\n", msg_id);
 
-    pid_t pid = fork();
-    // Fork a child process to run the user program.
-    if (pid == -1) {
-        fprintf(stderr, "OSS: Error in fork\n");
-        cleanupIPC(); // Clean up any IPC resources oss has created so far.
-        return EXIT_FAILURE;
-    }
+    int launchedChildren = 0;
+    int activeChildren = 0;
 
-    if (pid == 0) {
-        //For step 5, let's give the child process some time to stick around before it terminates. Later this should come from the -t command line opt
-        execl("./user_proc", "user_proc", "0", "100000000",(char *)NULL); // Execute the user program in the child process
-        perror("OSS: execl failed");
-        exit(EXIT_FAILURE);
-    } 
+    while (launchedChildren < TEST_CHILDREN) {
+        int slot = findFreePCBSlot();
+        
+        if (slot == -1) {
+            break;
+        }
 
-    child_pid_global = pid; // Store the child pid in the global variable for later cleanup
+        pid_t pid = fork();
 
-    printf("OSS: Forked one child with PID %d\n", pid);
-
-    int childDone = 0;
-
-    while(!childDone) {
-        //Send one turn message to the child.
-        if (!sendTurnMessage(msg_id, pid, 0)) {
-            kill(pid, SIGTERM);
-            waitpid(pid, NULL, 0);
-            cleanupIPC();
+        // Fork a child process to run the user program.
+        if (pid == -1) {
+            fprintf(stderr, "OSS: Error in fork\n");
+            cleanupIPC(); // Clean up any IPC resources oss has created so far.
             return EXIT_FAILURE;
         }
 
-        printf("OSS: Sent turn message to child PID %d at time %u:%u\n", pid, clock[0], clock[1]);
+        if (pid == 0) {
+            //For step 5, let's give the child process some time to stick around before it terminates. Later this should come from the -t command line opt
+            execl("./user_proc", "user_proc", "0", "100000000",(char *)NULL); // Execute the user program in the child process
+
+            perror("OSS: execl failed");
+            exit(EXIT_FAILURE);
+        } 
+
+    // child_pid_global = pid; // Store the child pid in the global variable for later cleanup
+        pcbTable[slot].occupied = 1;
+        pcbTable[slot].pid = pid;
+        pcbTable[slot].localPid = launchedChildren + 1;
+        pcbTable[slot].startSeconds = clock[0];
+        pcbTable[slot].startNano = clock[1];
+
+        printf("OSS: Forked child P%d with PID %d in slot %d\n", pcbTable[slot].localPid, pid, slot);
+        launchedChildren++;
+        activeChildren++;
+}
+
+    while (activeChildren > 0) {
+    for (int slot = 0; slot < MAX_PCB_SIZE; slot++) {
+        if(!pcbTable[slot].occupied) {
+            continue;
+        }
+
+        pid_t pid = pcbTable[slot].pid;
+
+        if(!sendTurnMessage(msg_id, pid, slot)){
+            kill(pid, SIGTERM);
+            waitpid(pid, NULL, 0);
+            releaseAllResources(slot); // Release all resources allocated to this child process in case of error, so that other child processes can continue to run without being blocked by this one.
+            clearPCBEntry(slot);
+            activeChildren--;
+            continue;
+        }
+
+        printf("OSS: Sent turn message to child P%d PID %d slot %d at time %u:%u\n", pcbTable[slot].localPid, pid, slot, clock[0], clock[1]);
 
         struct Message msgFromChild;
-        //wait for the child to respond with a req, release, or termination
+
 
         if (msgrcv(msg_id, &msgFromChild, sizeof(struct Message) - sizeof(long), 1, 0) == -1) {
             //OSS must receive messages from the child where mtype is 1.
             perror("OSS: msgrcv failed");
             kill(pid, SIGTERM);
             waitpid(pid, NULL, 0);
-            cleanupIPC();
-            return EXIT_FAILURE;    
+            releaseAllResources(slot); // Release all resources allocated to this child process in case of error, so that other child processes can continue to run without being blocked by this one.
+            clearPCBEntry(slot);
+            activeChildren--;
+            continue;        
         }
 
-        printf("OSS: Received message from child PID %d with value %d\n", msgFromChild.pid, msgFromChild.value);
+        printf("OSS: Received message from child PID %d slot %d with value %d\n", msgFromChild.pid, msgFromChild.slot, msgFromChild.value);
 
         if (msgFromChild.value > 0) {
             int resourceNumber = msgFromChild.value - 1; 
             // Positive values are resource requests.
             // 1 = request R0, 2 = request R1, ..., 10 = request R9.
 
-            printf("OSS: Child PID %d is requesting R%d at time %u:%u\n", msgFromChild.pid, resourceNumber, clock[0], clock[1]);
+            printf("OSS: Child PID %d slot %d is requesting R%d at time %u:%u\n", msgFromChild.pid, msgFromChild.slot, resourceNumber, clock[0], clock[1]);
 
             if(grantResource(msgFromChild.slot, resourceNumber)){
-                printf("OSS: Granting child PID %d request for R%d\n", msgFromChild.pid, resourceNumber);
+                printf("OSS: Granting child PID %d slot %d request for R%d\n", msgFromChild.pid, msgFromChild.slot, resourceNumber);
 
                 if(!sendGrantMessage(msg_id, msgFromChild.pid, msgFromChild.slot, msgFromChild.value)){
                     kill(pid, SIGTERM);
                     waitpid(pid, NULL, 0);
-                    cleanupIPC();
-                    return EXIT_FAILURE;
+                    releaseAllResources(slot);
+                    clearPCBEntry(slot);
+                    activeChildren--;
+                    continue;
                 } 
             } else {
-                printf("OSS: Could not grant request for R%d to child PID %d\n", resourceNumber, msgFromChild.pid);
+                printf("OSS: Could not grant request for R%d to child PID %d slot %d\n", resourceNumber, msgFromChild.pid, msgFromChild.slot);
                 
                 //Full blocking is not implemented yet, so we will just send a grant message with value 0 to indicate the request is not granted,
                 // so that user_proc does not hang waiting for a grant message 
@@ -425,8 +495,10 @@ int main(int argc, char *argv[]) {
                 if (!sendGrantMessage(msg_id, msgFromChild.pid, msgFromChild.slot, 0)) {
                     kill(pid, SIGTERM);
                     waitpid(pid, NULL, 0);
-                    cleanupIPC();
-                    return EXIT_FAILURE;
+                    releaseAllResources(slot);
+                    clearPCBEntry(slot);
+                    activeChildren--;
+                    continue;
                 }
             }
 
@@ -436,35 +508,35 @@ int main(int argc, char *argv[]) {
             // Negative values are resource releases.
             // -1 = release R0, -2 = release R1, ..., -10 = release R9.
 
-            printf("OSS: Child PID %d is releasing R%d at time %u:%u\n", msgFromChild.pid, resourceNumber, clock[0], clock[1]);
+            printf("OSS: Child PID %d slot %d is releasing R%d at time %u:%u\n", msgFromChild.pid, msgFromChild.slot, resourceNumber, clock[0], clock[1]);
 
             if (releaseOneResource(msgFromChild.slot, resourceNumber)) {
-                printf("OSS: Acknowledged release of R%d from child PID %d\n", resourceNumber, msgFromChild.pid);
+                printf("OSS: Acknowledged release of R%d from child PID %d slot %d\n", resourceNumber, msgFromChild.pid, msgFromChild.slot);
             } else {
-                printf("OSS: Could not release R%d from child PID %d\n", resourceNumber, msgFromChild.pid);
+                printf("OSS: Could not release R%d from child PID %d slot %d\n", resourceNumber, msgFromChild.pid, msgFromChild.slot);
             }
 
             printResourceTable();
         } else {
             //Value 0 from the child means the child is terminating.
-            printf("OSS: Child PID %d is terminating at time %u:%u\n", msgFromChild.pid, clock[0], clock[1]);
+            printf("OSS: Child PID %d slot %d is terminating at time %u:%u\n", msgFromChild.pid, msgFromChild.slot, clock[0], clock[1]);
 
             releaseAllResources(msgFromChild.slot); 
 
             printResourceTable();
 
             waitpid(pid, NULL, 0); // Wait for the child process to finish
-            child_pid_global = -1; // Reset the global variable since the child process has finished
-            childDone = 1; // Set the flag to exit the loop
+            clearPCBEntry(slot);
+            activeChildren--;
         }
 
-        if(!childDone){
-            //Advance simuilated time by 10ms (10 million nanoseconds) for each completed turn.
+        if (activeChildren > 0) {
+            // Advance simulated time by 10ms after each completed child turn.
             addToClock(clock, TURN_INCREMENT_NS);
+            }
         }
     }
         cleanupIPC(); // Detach from shared memory and mark shared memory and message queue for deletion
         printf("OSS: Shared memory and message queue cleaned up.\n");
-
         return EXIT_SUCCESS;
 }

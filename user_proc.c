@@ -208,7 +208,7 @@ int main(int argc, char *argv[]) {
                 return EXIT_FAILURE;
             }
 
-            printf("USER_PROC: PID %d time is up, sent termination message to OSS\n", getpid());
+            printf("USER_PROC: PID %d slot %d time is up, sent termination message to OSS\n", getpid(), slot);
             done = 1; // Exit the loop after sending termination message
         } else {
             int shouldRequest = (rand() % 100) < 70; // 70% chance to request, 30% chance to release
@@ -226,7 +226,7 @@ int main(int argc, char *argv[]) {
                     //If there is nothing valid to request, try to release instead.
                     resourceNumber = chooseReleaseResource(allocated);
                     shouldRequest = 0;
-                } 
+                    } 
                 } else {
                     resourceNumber = chooseReleaseResource(allocated);
                     
@@ -252,6 +252,7 @@ int main(int argc, char *argv[]) {
                 }
 
                 struct Message msgToOSS; 
+
                 msgToOSS.mtype = 1; // OSS receives child messages using mtype 1
                 msgToOSS.value = messageValue; // Set the value to indicate the resource request or release
                 msgToOSS.pid = getpid(); // Set the pid field to the pid of this child process, so OSS knows which process is making the request or release.
@@ -265,7 +266,7 @@ int main(int argc, char *argv[]) {
 
                 if(messageValue > 0){
                     //This process requested a resource, so it must wait for OSS to either grant or deny the request. 
-                    printf("USER_PROC: PID %d requested R%d\n", getpid(), resourceNumber);
+                    printf("USER_PROC: PID %d slot %d requested R%d\n", getpid(), slot, resourceNumber);
 
                     struct Message grantMessage;
 
@@ -278,9 +279,9 @@ int main(int argc, char *argv[]) {
                     if(grantMessage.value == messageValue) {
                         //oss granted the exact resource that was requested.
                         allocated[resourceNumber]++; // Update the local record of allocated resources for this child process.
-                        printf("USER_PROC: PID %d received granted resource R%d\n", getpid(), resourceNumber);
+                        printf("USER_PROC: PID %d slot %d received granted resource R%d\n", getpid(), slot, resourceNumber);
                     } else {
-                        printf("USER_PROC: PID %d did not receive grant for R%d\n", getpid(), resourceNumber);
+                        printf("USER_PROC: PID %d slot %d did not receive grant for R%d\n", getpid(), slot, resourceNumber);
                     }
                 } else if (messageValue < 0) {
                         // This process told oss it is releasing a resource.
@@ -289,8 +290,9 @@ int main(int argc, char *argv[]) {
 
                         allocated[resourceNumber]--;
 
-                        printf("USER_PROC: PID %d released R%d\n",
-                            getpid(),
+                        printf("USER_PROC: PID %d slot %d released R%d\n",
+                            getpid(), 
+                            slot,
                             resourceNumber);
                 } else {
                     done = 1;
